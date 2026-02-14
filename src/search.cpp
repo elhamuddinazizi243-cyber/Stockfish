@@ -1220,6 +1220,7 @@ moves_loop:  // When in check, search starts here
 
         // Decrease/increase reduction for moves with a good/bad history
         r -= ss->statScore * 850 / 8192;
+        if(ss->staticEval>=98&&ss->staticEval<=624){r+=ss->staticEval*2;}
 
         // Scale up reductions for expected ALL nodes
         if (allNode)
